@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+
+.contact-QQ,.contact-E-mail,.contact-weibo {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+
+.footer {
+	position: relative;
+	height: 200px;
+	width: auto;
+	background-color: #F7F7EE;
+	border-color: transparent;
+	padding-top: 45px;
+}
+
+.contact-div {
+	max-width: 370px;
+	height: 64px;
+}
+
+/** common **/
+.contact-QQ>div,.contact-E-mail>div,.contact-weibo>div {
+	background-image: url("../images/contact-icons-64x64.png");
+	height: 64px;
+}
+
+.contact-weibo>div {
+	background-position: 0px 0px;
+	width: 81px;
+}
+
+.contact-E-mail>div {
+	background-position: -91px 0px;
+	width: 68px;
+}
+
+.contact-QQ>div {
+	background-position: -169px 0px;
+	width: 58px;
+}
+
+div.contact-div .row>div>a>div {
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+div.contact-div>.row>div>a:hover>div {
+	-webkit-transform: translate(0, -20px);
+	-moz-transform: translate(0, -20px);
+	-o-transform: translate(0, -20px);
+	-ms-transform: translate(0, -20px);
+	transform: translate(0, -20px);
+}
+
+a.contact-QQ:hover {
+	/*background-position: left bottom;*/
+}
+
+.footer p {
+	padding-top: 50px;
+	font-size: 13px;
+	color: #251F12;
+	text-align: center;
+}
+
+@media ( min-width : 992px) {
+	.contact-div {
+		max-width: 540px;
+	}
+}
+
+/* Responsive Part - Tablets */
+@media ( max-width : 991px) and (min-width: 768px) {
+	.contact-div {
+		max-width: 440px;
+	}
+}
+
+@media (max-width : 767px){
+	.footer{
+		padding-top: 61px;
+	}
+	
+	.contact-div{
+		height: 32px;
+	}
+	
+	.contact-QQ>div,.contact-E-mail>div,.contact-weibo>div {
+		background-image: url("../images/contact-icons-32x32.png");
+		height: 32px;
+	}
+	.contact-weibo>div {
+		background-position: 0px 0px;
+		width: 41px;
+	}
+	
+	.contact-E-mail>div {
+		background-position: -46px 0px;
+		width: 34px;
+	}
+	
+	.contact-QQ>div {
+		background-position: -85px 0px;
+		width: 29px;
+	}
+	
+}

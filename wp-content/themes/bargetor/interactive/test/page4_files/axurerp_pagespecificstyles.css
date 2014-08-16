@@ -1,0 +1,95 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#u0 {
+    position:absolute;
+    left:70px;
+    top:60px;
+    width:201px;
+    height:201px;
+    overflow:hidden;
+}
+
+#pd1u0 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:201px;
+    height:201px;
+    
+}
+
+.u1 {
+    position:absolute;
+    left:10px;
+    top:70px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u1_text_sketch {
+    font-family: '应用字体';
+}
+
+#pd0u0 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:201px;
+    height:201px;
+    
+}
+
+.u2 {
+    position:absolute;
+    left:10px;
+    top:70px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u2_text_sketch {
+    font-family: '应用字体';
+}
+

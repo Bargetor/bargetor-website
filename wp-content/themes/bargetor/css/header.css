@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+
+.header {
+	background: url("../images/header-background.png");
+	border-color: transparent;
+	height: 103px;
+}
+
+.header-logo {
+	display: block;
+	background-image: url("../images/logo.png");
+	margin-top: 25px;
+	width: 158px;
+	height: 37px;
+}
+
+.header-calls-div {
+	margin-top: 25px;
+	border: none;
+}
+
+.header-calls-ul li {
+	padding: 10px 15px;
+	font-size: 16px;
+}
+
+.header-calls-ul li>a {
+	padding: 0px;
+}
+
+/* Responsive Part - Desktops*/
+@media ( min-width : 992px) {
+	.navbar-nav.navbar-right:last-child {
+		margin-right: 15px;
+	}
+	.header-logo {
+		margin-left: 30px;
+	}
+}
+
+/* Responsive Part - Tablets */
+@media ( max-width : 991px) and (min-width: 768px) {
+	.navbar-nav.navbar-right:last-child {
+		margin-right: 25px;
+	}
+	.header-logo {
+		margin-left: 40px;
+	}
+}
+
+@media ( min-width : 768px) {
+	.header-calls-ul>li>a:after {
+		position: absolute;
+		top: 64%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #b3b3b3;
+		content: '';
+		opacity: 0;
+		-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+		-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+		transition: opacity 0.3s, transform 0.3s;
+		-webkit-transform: translateY(30px);
+		-moz-transform: translateY(30px);
+		transform: translateY(30px);
+	}
+	.header-calls-ul>li>a:hover::after,.header-calls-ul>li>a:focus::after {
+		opacity: 1;
+		-webkit-transform: translateY(15px);
+		-moz-transform: translateY(15px);
+		transform: translateY(15px);
+	}
+}
+
+/* Responsive Part - Phones */
+@media ( max-width : 767px) {
+	.header {
+		position: relative;
+		background: white;
+		border-color: transparent;
+		margin-bottom: 0px;
+	}
+	.header div.container {
+		height: 103px;
+	}
+	.header-logo {
+		margin-left: 25px;
+	}
+	.header-calls-toggle {
+		margin-top: 27px;
+		margin-right: 25px;
+	}
+	.header-calls-div {
+		
+	}
+	.header-calls-ul {
+		margin-top: 6px;
+		padding-top: 0px;
+		border: 0px;
+	}
+	.header-calls-ul>li {
+		height: 40px;
+		padding-right: 25px;
+		background-color: white;
+	}
+	.header-calls-ul>li>a {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: center;
+	}
+}
+
+/*鼠标悬停时*/
+.header-calls-ul>li>a:hover,.navbar-nav>li>a:hover,.navbar-nav>li>a:focus,.header-calls-ul>li>a:focus
+	{
+	color: #251F12;
+}
+
+/*鼠标未选中未悬停时*/
+.header-calls-ul>li>a {
+	color: #655F4B;
+}

@@ -1,0 +1,361 @@
+(function() {
+	/**
+	 * 常量
+	 */
+	/**
+	 * 人物角色集名称
+	 */
+	var Role_Model_List_Name = 'rolemodelList';
+	var Role_Model_List_Type = 'div';
+	//由于编辑器里全部使用html标准，无法使用自定义属性，所以选择一个偏门属性代替
+	var Role_Model_List_Mark_Attr = 'id';
+	var Role_Model_Name = 'rolemodel';
+	var Role_Model_Age_Name = 'age';
+	var Role_Model_Sex_Name = 'sex';
+	var Role_Model_Job_Name = 'job';
+	var Role_Model_Demand_Name = 'demand';
+	
+	
+	//注意这里有个 role_model_button
+    tinymce.create('tinymce.plugins.role_model_button', {
+        init : function(editor, url) {
+        	//注意这一行有一个 role_model_button
+        	editor.addButton('role_model_button', {    
+                title : '人物角色',
+              //注意图片的路径 url是当前js的路径  
+                image : url+'/images/role-model-icon.png',
+                stateSelector : Role_Model_List_Type + '[' + Role_Model_List_Mark_Attr +'="' + Role_Model_List_Name +'"]',
+                onclick : function() { 
+                	showRoleModelWindow(editor);
+                	//editor.selection.setContent('[role_model_button]'); //这里是你要插入到编辑器的内容，你可以直接写上广告代码  
+                }   
+            });
+        },   
+        createControl : function(n, cm) {   
+            return null;
+        },   
+    });
+    //注意这里有两个 role_model_button
+    tinymce.PluginManager.add('role_model_button', tinymce.plugins.role_model_button);
+    
+    
+    /**
+     * 寻找子元素 by id
+     * @param element
+     * @param id
+     * @returns
+     */
+    function getElementById(element, id){
+    	if(!element)return null;
+    	for(var i = 0, len = element.children.length; i < len; i++){
+    		var child = element.children[i];
+    		if(child.id == id){
+    			return child;
+    		}else{
+    			//遍历子元素
+    			var result = getElementById(child, id);
+    			if(result)return result;
+    		}
+    	}
+    	return null;
+    }
+    
+    
+    /**
+     * 显示人物角色模型窗口
+     * @param editor
+     * @returns
+     */
+    function showRoleModelWindow(editor) {
+    	var dom = editor.dom;
+    	//选中的元素
+    	var selectElement = editor.selection.getNode();
+    	//人物角色模型集合元素
+    	var roleModelListElement;
+    	//人物角色模型元素
+    	var roleModelElement;
+    	//数据
+    	var data;
+    	
+    	/**
+    	 * 查找人物角色模型集合元素
+    	 */
+    	function findRoleModelListElement(){
+    		//人物角色模型集元素，取被选节点的父节点
+        	var element = dom.getParent(selectElement, Role_Model_List_Type + '[' + Role_Model_List_Mark_Attr +'="' + Role_Model_List_Name +'"]');
+        	
+        	//如果不是父节点则到全文查找
+        	if(!element){
+        		element = dom.get(Role_Model_List_Name);
+        	}
+        	return element;
+    	}
+    	
+    	/**
+    	 * 查找角色模型元素
+    	 */
+    	function findRoleModelElement(){
+    		var element = dom.getParent(selectElement, Role_Model_List_Type + '[' + Role_Model_List_Mark_Attr +'="' + Role_Model_Name +'"]');
+    		return element;
+    	}
+    	
+    	/**
+    	 * 创建人物角色模型集合元素
+    	 */
+    	function buildRoleModelListElement(){
+    		var html = '<' + Role_Model_List_Type + ' ' 
+    					+ Role_Model_List_Mark_Attr + '="' 
+    					+ Role_Model_List_Name + "\"";
+    		html += '><hr/>人物角色模型集';
+    		html += '<hr/></' + Role_Model_List_Type + '><p></p>';
+    		editor.setContent(editor.getContent() + html);
+    	}
+    	
+    	/**
+    	 * 创建人物角色模型元素
+    	 */
+    	function buildEmptyRoleModelElement(){
+    		var element = dom.create(Role_Model_List_Type);
+    		element.setAttribute(Role_Model_List_Mark_Attr, Role_Model_Name);
+    		element.textContent = '人物角色模型';
+    		
+    		var div;
+    		//职业
+    		div = dom.create('div');
+    		div.textContent = '职业：';
+    		var job = dom.create('label');
+    		job.setAttribute(Role_Model_List_Mark_Attr, Role_Model_Job_Name);
+    		div.appendChild(job);
+    		element.appendChild(div);
+    		
+    		//性别
+    		div = dom.create('div');
+    		div.textContent = '性别：';
+    		var sex = dom.create('label');
+    		sex.setAttribute(Role_Model_List_Mark_Attr, Role_Model_Sex_Name);
+    		div.appendChild(sex);
+    		element.appendChild(div);
+    		
+    		//年龄
+    		div = dom.create('div');
+    		div.textContent = '年龄：';
+    		var age = dom.create('label');
+    		age.setAttribute(Role_Model_List_Mark_Attr, Role_Model_Age_Name);
+    		div.appendChild(age);
+    		element.appendChild(div);
+    		
+    		//需求
+    		div = dom.create('div');
+    		div.textContent = '需求：';
+    		var demand = dom.create('ul');
+    		demand.setAttribute(Role_Model_List_Mark_Attr, Role_Model_Demand_Name);
+    		div.appendChild(demand);
+    		element.appendChild(div);
+    		
+    		return element;
+    	}
+    	
+    	/**
+    	 * 创建数据
+    	 */
+    	function buildData(roleModelElement){
+    		var job;
+    		var age;
+    		var sex;
+    		var demand = '';
+    		var data = {};
+    		
+    		job = getElementById(roleModelElement, Role_Model_Job_Name).innerHTML;
+    		age = getElementById(roleModelElement, Role_Model_Age_Name).innerHTML;
+    		sex = getElementById(roleModelElement, Role_Model_Sex_Name).innerHTML;
+    		sex = (sex == '' || sex == null) ? '男' : sex;
+    		
+    		var demandUl = getElementById(roleModelElement, Role_Model_Demand_Name);
+    		for(var i = 0, len = demandUl.children.length; i < len; i++){
+    			if(i > 0)demand += '\n';
+    			demand += demandUl.children[i].innerHTML;
+    		}
+    		
+    		
+    		data[Role_Model_Job_Name] = job;
+    		data[Role_Model_Age_Name] = age;
+    		data[Role_Model_Sex_Name] = sex;
+    		data[Role_Model_Demand_Name] = demand;
+    		
+    		return data;
+    	}
+    	
+    	/**
+    	 * 设置数据
+    	 */
+    	function setData(data){
+    		getElementById(roleModelElement, Role_Model_Job_Name).innerHTML = data[Role_Model_Job_Name];
+    		getElementById(roleModelElement, Role_Model_Age_Name).innerHTML = data[Role_Model_Age_Name];
+    		getElementById(roleModelElement, Role_Model_Sex_Name).innerHTML = data[Role_Model_Sex_Name];
+    		
+    		var demandUl = getElementById(roleModelElement, Role_Model_Demand_Name);
+    		//清除需求
+    		for(var i = 0, len = demandUl.children.length; i < len; i++){
+    			demandUl.removeChild(demandUl.children[i]);
+    		}
+    		
+    		//设置需求
+    		if(data[Role_Model_Demand_Name] && data[Role_Model_Demand_Name] != ''){
+    			var demands = data[Role_Model_Demand_Name].split('\n');
+    			for(var i = 0, len = demands.length; i < len; i++){
+        			var li = dom.create('li');
+        			li.innerHTML = demands[i];
+        			demandUl.appendChild(li);
+        		}
+    		}
+    	}
+    	
+    	/**
+    	 * 创建窗体
+    	 */
+    	function buildWindowBody(data){
+    		//工作
+        	var jobCtrl = {
+        			type: 'container',
+        			layout: 'flex',
+        			direction: 'row',
+        			align: 'left',
+        			spacing: 5,
+        			items: [
+        					{
+        						type: 'label', text: '工作：'
+        					},
+        					{
+        		    			name: Role_Model_Job_Name,
+        						type: 'textbox',
+        						value: data[Role_Model_Job_Name]
+        					}
+        				]
+        	}
+        	
+        	//年龄
+        	var ageCtrl = {
+        			type: 'container',
+        			layout: 'flex',
+        			direction: 'row',
+        			align: 'left',
+        			spacing: 5,
+        			items: [
+        					{
+        						type: 'label', text: '年龄：'
+        					},
+        					{
+        		    			name: Role_Model_Age_Name,
+        						type: 'textbox',
+        						value: data[Role_Model_Age_Name]
+        					}
+        				]
+        	}
+        	
+        	
+        	//性别
+        	var sexListCtrl = {
+        			type: 'container',
+        			layout: 'flex',
+        			direction: 'row',
+        			align: 'left',
+        			spacing: 5,
+        			items: [
+        					{
+        						type: 'label', text: '性别：'
+        					},
+        					{
+        		    			name: Role_Model_Sex_Name,
+        						type: 'listbox',
+        						value: data[Role_Model_Sex_Name],
+        						values:[{
+        							text: '男', value: '男'
+        						},{
+        							text: '女', value: '女'
+        						}]
+        					}
+        				]
+        	}
+        	
+        	//需求框
+        	var demandCtrl = {
+        			type: 'container',
+        			layout: 'flex',
+        			direction: 'row',
+        			align: 'left',
+        			spacing: 5,
+        			items: [
+        					{
+        						type: 'label', text: '需求（换行分隔）：'
+        					},
+        					{
+        		    			name: Role_Model_Demand_Name,
+        						type: 'textbox',
+        						value: data[Role_Model_Demand_Name],
+        						multiline: true,
+        						minWidth: editor.getParam("code_dialog_width", 400),
+        						minHeight: editor.getParam("code_dialog_height", Math.min(tinymce.DOM.getViewPort().h - 200, 300))
+        					}
+        				]
+        	}
+        	
+        	return [{title: 'General',
+				type: 'form',
+				items: [jobCtrl, ageCtrl, sexListCtrl, demandCtrl]}];
+    	}
+    	
+    	/**
+    	 * 提交
+    	 */
+    	function onSubmit(e){
+    		// We get a lovely "Wrong document" error in IE 11 if we
+    		// don't move the focus to the editor before creating an undo
+    		// transation since it tries to make a bookmark for the current
+    		// selection
+    		//editor.focus();
+    		
+    		editor.undoManager.transact(function() {
+    			setData(e.data);
+    		});
+
+//    		editor.selection.setCursorLocation();
+//    		editor.nodeChanged();
+    	}
+    	
+    	/************************* 执行 **********************************/
+    	
+    	
+    	
+    	
+    	
+    	
+    	roleModelListElement = findRoleModelListElement();
+    	roleModelElement = findRoleModelElement()
+    	
+    	//如果人物角色模型集合为空，则创建退出
+    	if(!roleModelListElement){
+    		buildRoleModelListElement();
+    		editor.focus();
+    		return;
+    	}
+    	//如果没有人物角色模型，创建
+    	if(!roleModelElement){
+    		roleModelElement = buildEmptyRoleModelElement();
+    		//追加到尾,因为最后的节点为横线
+    		roleModelListElement.insertBefore(roleModelElement, roleModelListElement.lastChild);
+    	}
+    	//创建数据
+    	data = buildData(roleModelElement);
+
+    	//打开窗口
+    	editor.windowManager.open({
+    		title: "人物角色模型",
+    		data: data,
+    		bodytype: 'tabpanel',
+    		body: buildWindowBody(data),
+    		onSubmit: onSubmit
+    	});
+    }
+
+})(); 
+

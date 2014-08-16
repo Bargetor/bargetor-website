@@ -1,0 +1,134 @@
+@CHARSET "UTF-8";
+
+.banner-life{
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/img-product-banner-2x.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.banner-mask-life{
+	height: 100%;
+	background-color: #EDEDDC;
+	opacity: .80;
+	top: 100px;
+	bottom: 0px;
+}
+
+.banner-readme-life{
+	position: relative;
+	display: block;
+	font-size: 24px;
+	color: #655F4B;
+	background: transparent;
+	top: 45%;
+}
+
+.banner-readme-life>.readme-hi{
+	font-size: 40px;
+	color: #251F12;
+	line-height: 80px;
+}
+
+.life-list{
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
+.life{
+	overflow: hidden;
+	margin-top: 30px;
+	width: 270px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.life>a{
+	display: block;
+	height: 100%;
+	widht: 100%;
+	text-decoration: none;
+}
+
+.life>a:hover>.title, .life>a:focus>.title{
+	color: #FF5250;
+}
+
+.life>a>p{
+	color: #4C4639;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.life>a>.title{
+	transition: color .3s;
+	font-size: 20px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+
+.life>a>.description{
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.life>a>.date{
+	font-size: 10px;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.life-img{
+	width: 100%;
+	border-radius: 4px 4px 4px 4px;
+}
+
+@media (min-width : 1230px){
+	.life-masonry{
+		width: 1230px;
+	}
+}
+
+@media ( min-width : 992px ) and ( max-width: 1229px ) {
+	.life-masonry{
+		width: 930px;
+	}
+}
+
+@media ( max-width : 991px) and (min-width: 768px){
+	.life-masonry{
+		width: 630px;
+	}
+}
+
+/* Responsive Part - Phones */
+ @media (max-width: 767px){
+ 	.banner-readme-life{
+ 		top: 37%;
+ 		font-size: 18px;
+ 	}
+ 	.banner-readme-life>.readme-hi{
+ 		font-size: 30px;
+ 	}
+ 	.life-list{
+ 		margin: 40px;
+ 	}
+ 	.life{
+ 		width: 100%;
+ 		margin: 30px 0 0 0;
+ 		padding-right: 30px;
+ 	}
+ 	.life-masonry{
+		width: 100%;
+	}
+ }
+
+.banner-readme-life span.banner-readme-name{
+	color: #002754;
+}
+
+.banner-readme-life span.banner-readme-job{
+	color: #FF5250;
+}

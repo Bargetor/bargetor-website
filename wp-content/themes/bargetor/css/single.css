@@ -1,0 +1,471 @@
+@CHARSET "UTF-8";
+
+.banner-single{
+	width: 100%;
+	height: 100%;
+	background-color: #EDEDDC;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.banner-mask-single{
+	height: 100%;
+	background-color: #EDEDDC;
+	opacity: .80;
+	top: 100px;
+	bottom: 0px;
+}
+
+.banner-about-single{
+	position: relative;
+	display: block;
+	font-size: 24px;
+	color: #655F4B;
+	background: transparent;
+	top: 40%;
+}
+
+.banner-about-single>.meta-single{
+	text-align: center;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.banner-about-single>.meta-single>.meta-single-item{
+	display: inline-block;
+	font-size: 20px;
+}
+
+.banner-about-single>.meta-single>.single-type{
+	margin-right: 100px;
+}
+
+.meta-single-item>ul>li{
+	color: #38B6C7;
+}
+
+.meta-single-item>ul>li>span{
+	color: #65604B;
+}
+
+.banner-about-single>.about-title{
+	font-size: 40px;
+	color: #251F12;
+	line-height: 80px;
+}
+
+.banner-about-single>.about-description{
+	font-size: 24px;
+	color: #65604B;
+	text-align: center;
+}
+
+.content-single{
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.content-single>.container{
+	width: 100%;
+	padding: 0px;
+}
+
+.single-main{
+	/**
+	padding-left: 60px;
+	**/
+}
+
+.content-single h1{
+	font-size: 32px;
+	font-weight: bold;
+	margin: 30px 0px 30px -60px;
+	line-height: 60px;
+}
+
+.content-single a{
+	color: #FF7878;
+	text-decoration: none;
+}
+
+
+.content-single .single-main .a-img{
+	text-align: center;
+	display: block;
+}
+.content-single li a{
+	text-align: left;
+}
+
+.content-single a:hover{
+	color: #FF5250;
+}
+
+.content-single h2{
+	text-align: left;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 30px 0;
+	line-height: 48px;
+}
+
+.content-single h3{
+	text-align: left;
+	font-size: 22px;
+	font-weight: bold;
+	margin: 30px 0;
+	line-height: 44px;
+}
+
+.content-single h4{
+	text-align: center;
+	font-size: 22px;
+	margin: 30px 0;
+	line-height: 44px;
+}
+
+.content-single img{
+	margin: 30px auto;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content-single p{
+	margin: 30px auto;
+}
+
+.role-model-list{
+	padding: 0 0 0 0;
+	width: 100%;
+	margin: 30px 0;
+}
+
+.role-model-item{
+	border-color: #B6A36F;
+	border-width: 1px;
+	border-style: solid;
+	margin-bottom: 30px;
+	padding: 20px;
+	margin-right: 30px;
+}
+
+.role-model-item-pic{
+	background-image: url("../images/person-icon.png");
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 64px;
+	width: 60px;
+}
+
+.role-model-item-information{
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.role-model-item-about{
+	display: inline;
+	float: left;
+	margin-left: 10px;
+}
+
+.role-model-item-about>p{
+	font-size: 18px;
+	margin: 0 0 0 0;
+	line-height: 1;
+}
+
+.role-model-item-about>ul{
+	font-size: 18px;
+}
+
+.role-model-item-requirement{
+	display: inline-block;
+	padding-left: 20px;
+	font-size: 18px;
+	color: #251F12;
+}
+
+.bargetor-tree-node{
+	border: 1px solid #B6A36F;
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+
+.bargetor-tree-node p{
+	margin: 0px auto;
+}
+
+.information-architecture-main{
+	margin: 30px auto;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.interactive-design-main{
+	background-image: url("../images/iphone-wireframe-320x480.png");
+	width: 378px;
+	height: 735px;
+	margin: 30px auto;
+	position: relative;
+}
+
+.interactive-design-iframe{
+	position: absolute;
+	/**这里height:480px width:320px 多出的3px 为边框**/
+	height: 483px;
+	width: 323px;
+	left: 31px;
+	top: 129px;
+	border: 1px solid #B6A36F;
+	overflow: hidden;
+}
+
+.video-main{
+	margin: 30px 0;
+	text-align: center;
+}
+
+.video{
+	margin: 0 auto;
+}
+
+/** procuct nav bar icon begin **/
+.single-bar{
+	position: fixed;
+	top: 0px;
+	list-style: none;
+	opacity: 0;
+	z-index: 9999;
+	padding-left: 0px;
+	
+	-webkit-transition: opacity 1s, top 1s;
+	-moz-transition: opacity 1s, top 1s;
+	transition: opacity 1s, top 1s;
+}
+
+.single-common-bar{
+	opacity: 0;
+	top: 85%;
+	left: 90%;
+}
+
+.single-share-bar{
+	opacity: 1;
+	position: absolute;
+	top: 85%;
+	left: 10%;
+}
+
+
+.product-navigation-bar{
+	
+}
+
+.single-bar p{
+	font-size: 13px;
+	margin-top: 4px;
+	color: #B6A36F;
+	margin-left: 0;
+	-webkit-transition: color .5s;
+	-moz-transition: color .5s;
+	transition: color .5s;
+}
+
+.product-navigation-bar p{
+	
+}
+
+.single-bar-item{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.single-share-bar-item{
+	float: left;
+	margin-right: 40px; 
+}
+
+.product-navigation-bar-item{
+	
+}
+
+.single-bar-icon{
+	margin: 0 auto;
+	height: 32px;
+	background-position-y: 0px;
+	-webkit-transition: background .3s;
+	-moz-transition: background .3s;
+	transition: background .3s;
+}
+
+/**
+*分享按钮使用向右动画
+**/
+
+.single-share-bar-icon{
+	background-image: url("../images/share-icons.png");
+	background-position-x: 0px;
+	-webkit-transition: background .3s;
+	-moz-transition: background .3s;
+	transition: background .3s;
+}
+
+.single-share-bar-icon-weibo{
+	width: 41px;
+	background-position-y: 0px;
+}
+
+.single-share-bar-icon-Qzone{
+	width: 32px;
+	background-position-y: -42px;
+}
+
+.single-share-bar-item>a:hover .single-share-bar-icon{
+	background-position-x: -70px;
+}
+
+.single-bar-common-icon{
+	background-image: url("../images/works-icon-common.png");
+}
+
+
+.single-bar-common-item-current div{
+	background-position-y: -42px;
+}
+.single-bar-common-item-current p{
+	color: #65604B;
+}
+.single-bar-common-item-current:hover .product-nav-bar-icon{
+	background-position-y: 0px;
+}
+
+.product-navigation-bar>li>a:hover .product-nav-bar-icon{
+	background-position-y: -42px;
+}
+
+.product-navigation-bar>li>a:hover p{
+	color: #65604B;
+}
+
+.single-bar-common-item-current:hover p{
+	color: #B6A36F;
+}
+
+.single-common-bar>li>a:hover .single-bar-common-icon{
+	background-position-y: -42px;
+}
+
+.single-common-bar>li>a:hover p{
+	color: #65604B;
+}
+
+.single-bar-common-up-icon{
+	width: 29px;
+	background-position-x: 0px;
+}
+
+.product-nav-bar-icon{
+	background-image: url("../images/product-bar-icons-32x32.png");
+}
+
+.product-nav-bar-item-current div{
+	background-position-y: -42px;
+}
+
+.product-nav-bar-item-current p{
+	color: #65604B;
+}
+
+.product-nav-bar-item-current:hover .product-nav-bar-icon{
+	background-position-y: 0px;
+}
+
+.product-nav-bar-item-current:hover p{
+	color: #B6A36F;
+}
+
+.data-analysis-icon{
+	width: 31px;
+	background-position-x: -274px; 
+}
+
+.role-model-icon{
+	width: 32px;
+	background-position-x: 0px;
+}
+
+.information-architecture-icon{
+	width: 24px;
+	background-position-x: -46px;
+}
+
+.sketch-icon{
+	width: 32px;
+	background-position-x: -84px;
+}
+
+.visual-design-icon{
+	width: 32px;
+	background-position-x: -129px;
+}
+
+.interactive-design-icon{
+	width: 32px;
+	background-position-x: -176px;
+}
+
+.video-icon{
+	width: 32px;
+	background-position-x: -222px;
+}
+
+/** procuct nav bar icon end **/
+
+
+/* Responsive Part - Phones */
+ @media (max-width: 767px){
+ 
+ 	.banner-about-single{
+ 		top: 37%;
+ 		font-size: 18px;
+ 	}
+ 	.banner-about-single>.about-title{
+ 		font-size: 30px;
+ 	}
+ 	.single-common-bar{
+ 		display: none;
+ 	}
+ 	
+ 	.product-navigation-bar{
+ 		display: none;
+ 	}
+ 	
+ 	.product-navigation-bar>li{
+		position: relative;
+		display: block;
+		float: left;
+		margin: 0 20px 0 0;
+	}
+	
+	.content-single h1{
+		margin-left: 0px;
+	}
+ }

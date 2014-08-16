@@ -1,0 +1,1 @@
+1.要配置重写规则请前往 /custom/query/BargetorRewriteRuleProxy.php配置
