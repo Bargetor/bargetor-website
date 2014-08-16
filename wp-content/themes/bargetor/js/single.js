@@ -71,7 +71,7 @@ function buildWeiboShareContent(targetUrl, title){
 	
 //	content += ')';
 	
-	cotent += " 分享来自：";
+	content += " 分享来自：";
 	
 	return content;
 }
