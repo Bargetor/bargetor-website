@@ -22,7 +22,7 @@
 }
 
 /** common **/
-.contact-QQ>div,.contact-E-mail>div,.contact-weibo>div {
+.contact-QQ>div,.contact-E-mail>div,.contact-weibo>div,.contact-github>div {
 	background-image: url("../images/contact-icons-64x64.png");
 	height: 64px;
 }
@@ -40,6 +40,11 @@
 .contact-QQ>div {
 	background-position: -169px 0px;
 	width: 58px;
+}
+
+.contact-github>div {
+	background-position: -237px 0px;
+	width: 64px;
 }
 
 div.contact-div .row>div>a>div {
