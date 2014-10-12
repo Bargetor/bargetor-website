@@ -1,10 +1,14 @@
 @CHARSET "UTF-8";
 
-.contact-QQ,.contact-E-mail,.contact-weibo {
+[class^="contact-"], [class*="contact-"]{
+	font-size: 64px;
+	color: #B6A36F;
 	position: relative;
 	display: inline-block;
 	text-align: center;
 }
+
+
 
 
 .footer {
@@ -16,43 +20,35 @@
 	padding-top: 45px;
 }
 
-.contact-div {
+.contactdiv {
 	max-width: 370px;
 	height: 64px;
 }
 
-/** common **/
-.contact-QQ>div,.contact-E-mail>div,.contact-weibo>div,.contact-github>div {
-	background-image: url("../images/contact-icons-64x64.png");
-	height: 64px;
+
+.icon-contact-github::before{
+	content: "\e602";
 }
 
-.contact-weibo>div {
-	background-position: 0px 0px;
-	width: 81px;
+.icon-contact-email::before{
+	content: "\e600";
 }
 
-.contact-E-mail>div {
-	background-position: -91px 0px;
-	width: 68px;
+.icon-contact-qq::before{
+	content: "\e601";
 }
 
-.contact-QQ>div {
-	background-position: -169px 0px;
-	width: 58px;
+.icon-contact-weibo::before{
+	content: "\e603";
 }
 
-.contact-github>div {
-	background-position: -237px 0px;
-	width: 64px;
-}
 
-div.contact-div .row>div>a>div {
+div.contactdiv .row>div>a {
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
 }
 
-div.contact-div>.row>div>a:hover>div {
+div.contactdiv>.row>div>a:hover {
 	-webkit-transform: translate(0, -20px);
 	-moz-transform: translate(0, -20px);
 	-o-transform: translate(0, -20px);
@@ -72,44 +68,29 @@ a.contact-QQ:hover {
 }
 
 @media ( min-width : 992px) {
-	.contact-div {
+	.contactdiv {
 		max-width: 540px;
 	}
 }
 
 /* Responsive Part - Tablets */
 @media ( max-width : 991px) and (min-width: 768px) {
-	.contact-div {
+	.contactdiv {
 		max-width: 440px;
 	}
 }
 
 @media (max-width : 767px){
 	.footer{
-		padding-top: 61px;
+		padding-top: 62px;
 	}
 	
-	.contact-div{
+	.contactdiv{
 		height: 32px;
 	}
 	
-	.contact-QQ>div,.contact-E-mail>div,.contact-weibo>div {
-		background-image: url("../images/contact-icons-32x32.png");
-		height: 32px;
-	}
-	.contact-weibo>div {
-		background-position: 0px 0px;
-		width: 41px;
-	}
-	
-	.contact-E-mail>div {
-		background-position: -46px 0px;
-		width: 34px;
-	}
-	
-	.contact-QQ>div {
-		background-position: -85px 0px;
-		width: 29px;
-	}
+	[class^="contact-"], [class*="contact-"]{
+		font-size: 32px;
+	}	
 	
 }

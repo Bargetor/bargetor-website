@@ -10,26 +10,26 @@
  */
 ?>
 		<div class="footer">
-			<div class="container contact-div">
+			<div class="container contactdiv">
 				<div class="row">
 					<div class="col-xs-3 col-sm-3 col-md-3 text-center">
 						<a class="contact-weibo" href="http://weibo.com/bargetor" title="@神经病患者蓝桥">
-							<div></div>
+							<span class="icon-contact-weibo"></span>
 						</a>
 					</div>
 					<div class="col-xs-3 col-sm-3 col-md-3 text-center">
 						<a class="contact-E-mail" href="mailto:madign@qq.com" title="写信给我">
-							<div></div>
+							<span class="icon-contact-email"></span>
 						</a>
 					</div>
 					<div class="col-xs-3 col-sm-3 col-md-3 text-center">
 						<a class="contact-QQ" href="http://wpa.qq.com/msgrd?v=3&uin=284307306&site=qq&menu=yes" title="与我聊天-284307306">
-							<div></div>
+							<span class="icon-contact-qq"></span>
 						</a>
 					</div>
 					<div class="col-xs-3 col-sm-3 col-md-3 text-center">
 						<a class="contact-github" href="https://github.com/Bargetor" title="github">
-							<div></div>
+							<span class="icon-contact-github"></span>
 						</a>
 					</div>
 				</div>
