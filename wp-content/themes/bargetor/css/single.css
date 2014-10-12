@@ -321,44 +321,32 @@
 **/
 
 .single-share-bar-icon{
-	background-image: url("../images/share-icons.png");
-	background-position-x: 0px;
-	-webkit-transition: background .3s;
-	-moz-transition: background .3s;
-	transition: background .3s;
+	-webkit-transition: color .3s;
+	-moz-transition: color .3s;
+	transition: color .3s;
+	font-size: 32px;
+	width: 100%;
+	text-align: center;
 }
 
-.single-share-bar-icon-weibo{
-	width: 41px;
-	background-position-y: 0px;
+.icon-single-share-bar-weibo::before{
+	content: "\e603";
 }
 
-.single-share-bar-icon-Qzone{
-	width: 32px;
-	background-position-y: -42px;
+.icon-single-share-bar-Qzone::before{
+	content: "\e61a";
 }
 
-.single-share-bar-item>a:hover .single-share-bar-icon{
-	background-position-x: -70px;
+.single-share-bar-item>a:hover .icon-single-share-bar-weibo::before{
+	color: #C85E61;
 }
 
-.single-bar-common-icon{
-	background-image: url("../images/works-icon-common.png");
+.single-share-bar-item>a:hover .icon-single-share-bar-Qzone::before{
+	color: #2278CF;
 }
 
-
-.single-bar-common-item-current div{
-	background-position-y: -42px;
-}
 .single-bar-common-item-current p{
 	color: #65604B;
-}
-.single-bar-common-item-current:hover .product-nav-bar-icon{
-	background-position-y: 0px;
-}
-
-.product-navigation-bar>li>a:hover .product-nav-bar-icon{
-	background-position-y: -42px;
 }
 
 .product-navigation-bar>li>a:hover p{
@@ -369,72 +357,70 @@
 	color: #B6A36F;
 }
 
-.single-common-bar>li>a:hover .single-bar-common-icon{
-	background-position-y: -42px;
+.single-common-bar>li>a:hover .icon-single-bar-common-up::before{
+	color: #65604B;
 }
 
 .single-common-bar>li>a:hover p{
 	color: #65604B;
 }
 
-.single-bar-common-up-icon{
-	width: 29px;
-	background-position-x: 0px;
+.icon-single-bar-common-up::before{
+	content: "\e607";
 }
 
 .product-nav-bar-icon{
-	background-image: url("../images/product-bar-icons-32x32.png");
+	
+}
+.single-bar-item>[class^="icon-"],.single-bar-item>[class*="icon-"]{
+	font-size: 32px;
+	width: 100%;
+	text-align: center;
 }
 
-.product-nav-bar-item-current div{
-	background-position-y: -42px;
+
+.product-nav-bar-item-current>[class^="icon-"],.product-nav-bar-item-current>[class*="icon-"]{
+	color: #65604B;
 }
 
 .product-nav-bar-item-current p{
 	color: #65604B;
 }
 
-.product-nav-bar-item-current:hover .product-nav-bar-icon{
-	background-position-y: 0px;
+.product-nav-bar-item-current:hover>[class^="icon-"],.product-nav-bar-item-current:hover>[class*="icon-"]{
+	color: #B6A36F;
 }
 
 .product-nav-bar-item-current:hover p{
 	color: #B6A36F;
 }
 
-.data-analysis-icon{
-	width: 31px;
-	background-position-x: -274px; 
+.icon-data-analysis::before{
+	content: "\e60e"; 
 }
 
-.role-model-icon{
-	width: 32px;
-	background-position-x: 0px;
+.icon-role-model::before{
+	content: "\e609";
 }
 
-.information-architecture-icon{
-	width: 24px;
-	background-position-x: -46px;
+.icon-information-architecture::before{
+	content: "\e608";
 }
 
-.sketch-icon{
-	width: 32px;
-	background-position-x: -84px;
+.icon-sketch::before{
+	content: "\e605";
 }
 
-.visual-design-icon{
-	width: 32px;
-	background-position-x: -129px;
+.icon-visual-design::before{
+	content: "\e60b";
 }
 
-.interactive-design-icon{
-	width: 32px;
-	background-position-x: -176px;
+.icon-interactive-design::before{
+	content: "\e606";
 }
 
-.video-icon{
-	width: 32px;
-	background-position-x: -222px;
+.icon-video::before{
+	content: "\e60c";
 }
 
 /** procuct nav bar icon end **/

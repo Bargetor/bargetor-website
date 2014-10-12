@@ -159,48 +159,51 @@
 }
 
 /* time line icons begin */
-.time-nodes>li{
-	background-image: url("../images/time-line-icons-32x32.png");
+
+
+.time-node>[class^="icon-"],.time-node>[class*="icon-"]{
+	font-size: 32px;
 }
 
-.pennon {
-	background-position: 0px 0px;
-	width: 24px;
+.icon-pennon::before {
+	content: "\e604";
+	color: #38B6C7;
+	
 }
 
-.music {
-	background-position: -34px 0px;
-	width: 30px;
+.icon-music::before {
+	content: "\e60a";
+	color: #38B6C7;
 }
 
-.gem {
-	background-position: -73px 0px;
-	width: 33px;
+.icon-gem::before {
+	content: "\e610";
+	color: #38B6C7;
 }
 
-.blue-star {
-	background-position: -115px 0px;
-	width: 33px;
+.icon-blue-star::before {
+	content: "\e60f";
+	color: #38B6C7;
 }
 
-.red-star {
-	background-position: -157px 0px;
-	width: 33px;
+.icon-red-star::before {
+	content: "\e60f";
+	color: #FF5350;
 }
 
-.compass {
-	background-position: -199px 0px;
-	width: 33px;
+.icon-compass::before {
+	content: "\e614";
+	color: #FF5350;
 }
 
-.person {
-	background-position: -241px 0px;
-	width: 31px;
+.icon-person::before {
+	content: "\e609";
+	color: #38B6C7;
 }
 
-.power {
-	background-position: -281px 0px;
-	width: 16px;
+.icon-power::before {
+	content: "\e616";
+	color: #38B6C7;
 }
 
 /* time line icons end */

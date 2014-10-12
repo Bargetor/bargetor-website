@@ -1,3 +1,5 @@
+var time_node_icon_prefix = 'icon-'
+
 function percentageTime(a, b, c, d) {
 	var e = c.getTime() - a.getTime();
 	var f = b.getTime() - a.getTime();
@@ -45,13 +47,15 @@ function addNotes(a) {
 		//由于在移动设备上浏览器不支持live操作，所以这里绑定单击事件
 		b += "<li onclick='timeNodeAnimationOnclick();'";
 		b += ' class="time-node ';
+		var image;
 		if (results.nodes[c].image){
-			b += results.nodes[c].image;
+			image = results.nodes[c].image;
 		}else {
-			b += 'blue-star';
+			image = 'blue-star';
 		}
-		b += '"';
-		b += ">";
+		b += image;
+		b += '">';
+		b += "<span class='" + time_node_icon_prefix + image +"'></span>";
 		b += '<div class="caption">';
 		b += '<div class="arrow"></div>';
 		b += '<h4 class="heading">' + results.nodes[c].title;

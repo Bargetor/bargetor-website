@@ -51,8 +51,11 @@ include_once TEMPLATEPATH . '/post-function.php';
 			<ul class="single-bar single-common-bar">
 				<li id="">
 					<a href="javascript:gotoTop();" class="single-bar-item">
+					<!-- 
 						<div class="single-bar-icon single-bar-common-icon single-bar-common-up-icon">
 						</div>
+					 -->
+						<p class="single-bar-icon single-bar-common-icon icon-single-bar-common-up"></p>
 						<p>回到顶部</p>
 					</a>
 				</li>

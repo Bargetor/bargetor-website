@@ -37,50 +37,49 @@
     			<ul class="single-bar product-navigation-bar">
     				<li id="bar-data-analysis">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon data-analysis-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-data-analysis">
+							</p>
 							<p>数据分析</p>
 						</a>
 					</li>
 					<li id="bar-item-role-model">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon role-model-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-role-model">
+							</p>
 							<p>角色模型</p>
 						</a>
 					</li>
 					<li id="bar-item-information-architecture">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon information-architecture-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-information-architecture">
+							</p>
 							<p>信息架构</p>
 						</a>
 					</li>
 					<li id="bar-item-sketch">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon sketch-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-sketch">
+							</p>
 							<p>草图原型</p>
 						</a>
 					</li>
 					<li id="bar-item-visual-design">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon visual-design-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-visual-design"></p>
 							<p>视觉设计</p>
 						</a>
 					</li>
 					<li id="bar-item-interactive-design">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon interactive-design-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-interactive-design">
+							</p>
 							<p>交互设计</p>
 						</a>
 					</li>
 					<li id="bar-item-video">
 						<a href="javascript:void(0);" class="single-bar-item product-navigation-bar-item">
-							<div class="single-bar-icon product-nav-bar-icon video-icon">
-							</div>
+							<p class="single-bar-icon product-nav-bar-icon icon-video">
+							</p>
 							<p>思路演说</p>
 						</a>
 					</li>
