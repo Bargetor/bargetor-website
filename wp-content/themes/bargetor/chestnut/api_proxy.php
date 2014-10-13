@@ -4,7 +4,7 @@
   */
 
 //define your token
-define("TOKEN", "bargetor's chestnut");
+define("TOKEN", "bargetor_chestnut");
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
 
