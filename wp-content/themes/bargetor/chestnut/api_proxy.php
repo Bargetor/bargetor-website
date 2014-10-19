@@ -14,10 +14,10 @@ function chectnut_api_proxy(){
 	$method = $_SERVER['REQUEST_METHOD'];
 	if($method == 'GET'){
 		$params = build_query($_GET);
-		print $params;
 		return http_query_get(TARGET_URL, $params);
 	}
 	if($method == 'POST'){
+		print $_POST['HTTP_RAW_POST_DATA'];
 		return http_query_post(TARGET_URL, $_POST);
 	}
 }
