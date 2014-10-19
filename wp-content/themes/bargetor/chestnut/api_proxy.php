@@ -5,6 +5,8 @@
 
 //define your token
 define("TOKEN", "bargetor_chestnut");
+define("target_url", "http://127.0.0.1:8000/");
+
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
 
