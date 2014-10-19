@@ -18,7 +18,8 @@
  		'products' => '/products.php',
 		'works' => '/products.php',
  		'life' => '/life.php',
-        'api'=> '/chestnut/api_proxy.php');
+        'api'=> '/chestnut/api_proxy.php',
+		'test'=> '/test/test.php');
 
 		private function __construct(){
 			$this->target = new BaseBargetorRewriteRule(BARGETOR_QUERY_VAR_NAME, self::$array);
