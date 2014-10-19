@@ -5,7 +5,7 @@
 
 //define your token
 define("TOKEN", "bargetor_chestnut");
-define("TARGET_URL", "http://localhost:8000/");
+define("TARGET_URL", "http://localhost:8000/api");
 
 echo chectnut_api_proxy();
 
@@ -15,12 +15,12 @@ function chectnut_api_proxy(){
 	if($methon == 'GET'){
 		$params = build_query($_GET);
 		return http_query_get(TARGET_URL, $params);
-		
+
 	}
 	if($methon == 'POST'){
-		
+
 	}
-	
+
 }
 
 
@@ -29,7 +29,7 @@ function http_query_get($url, $params){
 }
 
 function http_query_post($url, $params){
-	
+
 }
 
 
