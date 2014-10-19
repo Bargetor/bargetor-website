@@ -27,18 +27,21 @@ function http_query_get($url, $params){
 }
 
 function http_query_post($url, $params){
-	$data = http_build_query($params);
-	$opts = array (
-				'http' => array (
-				'method' => 'POST',
-				'header'=> "Content-type: application/x-www-form-urlencoded\r\n" .
-				"Content-Length: " . strlen($data) . "\r\n",
-				'content' => $data
-			));
-	$context = stream_context_create($opts);
-	$result = file_get_contents($url, false, $context);
-	return result;
+	if (is_array($params)) {
+		ksort($params);
+		$content = http_build_query($params);
+		$content_length = strlen($content);
+		$options = array(
+            'http' => array(
+                'method' => 'POST',
+                'header' =>
+                "Content-type: application/x-www-form-urlencoded\r\n" .
+                "Content-length: $content_length\r\n",
+                'content' => $content
+		)
+		);
+		return file_get_contents($url, false, stream_context_create($options));
+	}
 }
-
 
 ?>
