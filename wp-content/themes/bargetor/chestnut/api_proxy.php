@@ -11,12 +11,12 @@ echo chectnut_api_proxy();
 
 
 function chectnut_api_proxy(){
-	$methon = $_SERVER['REQUEST_METHOD'];
-	if($methon == 'GET'){
+	$method = $_SERVER['REQUEST_METHOD'];
+	if($method == 'GET'){
 		$params = build_query($_GET);
 		return http_query_get(TARGET_URL, $params);
 	}
-	if($methon == 'POST'){
+	if($method == 'POST'){
 		return http_query_post(TARGET_URL, $_POST);
 	}
 }
