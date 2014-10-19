@@ -5,7 +5,7 @@
 
 //define your token
 define("TOKEN", "bargetor_chestnut");
-define("TARGET_URL", "http://localhost:8000/api");
+define("TARGET_URL", "http://127.0.0.1:8000/api");
 
 echo chectnut_api_proxy();
 
