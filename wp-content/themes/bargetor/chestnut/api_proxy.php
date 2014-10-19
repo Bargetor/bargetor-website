@@ -34,9 +34,6 @@ function http_query_post($url, $params){
 		$options = array(
             'http' => array(
                 'method' => 'POST',
-                'header' =>
-                "Content-type: application/x-www-form-urlencoded\r\n" .
-                "Content-length: $content_length\r\n",
                 'content' => $content
 		)
 		);
