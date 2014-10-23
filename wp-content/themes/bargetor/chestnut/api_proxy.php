@@ -5,7 +5,7 @@
 
 //define your token
 define("TOKEN", "bargetor_chestnut");
-define("TARGET_URL", "http://127.0.0.1:8000/api/");
+define("TARGET_URL", "http://192.168.1.104:8000/api/");
 
 echo chectnut_api_proxy();
 
@@ -13,7 +13,7 @@ echo chectnut_api_proxy();
 function chectnut_api_proxy(){
 	$method = $_SERVER['REQUEST_METHOD'];
 	if($method == 'GET'){
-		return $params;
+		$params = build_query($_GET);
 		return http_query_get(TARGET_URL, $params);
 	}
 	if($method == 'POST'){
@@ -23,7 +23,15 @@ function chectnut_api_proxy(){
 
 
 function http_query_get($url, $params){
-	return file_get_contents($url . '?' . $params);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url . '?' . $params);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	$output = curl_exec($ch);
+	curl_close($ch);
+	return $output;
+	
+	//return file_get_contents($url . '?' . $params);
 }
 
 function http_query_post($url, $params){
