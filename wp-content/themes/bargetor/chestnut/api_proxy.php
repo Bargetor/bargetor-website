@@ -13,7 +13,7 @@ echo chectnut_api_proxy();
 function chectnut_api_proxy(){
     if (isset($_GET['echostr'])) {
         $params = build_query($_GET);
-        return http_query_get($url, $params);
+        return http_query_get(TARGET_URL, $params);
     }else{
         $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
         return http_query_post(TARGET_URL, $post_data);
