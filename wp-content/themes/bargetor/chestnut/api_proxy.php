@@ -17,8 +17,8 @@ function chectnut_api_proxy(){
 		return http_query_get(TARGET_URL, $params);
 	}
 	if($method == 'POST'){
-        return $GLOBALS["HTTP_RAW_POST_DATA"];
-		//return http_query_post(TARGET_URL, $_POST);
+        $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
+		return http_query_post(TARGET_URL, $post_data);
 	}
 }
 
@@ -42,7 +42,7 @@ function http_query_post($url, $params){
 	CURLOPT_POST => TRUE, //使用post提交
 	CURLOPT_RETURNTRANSFER => TRUE, //接收服务端范围的html代码而不是直接浏览器输出
 	CURLOPT_TIMEOUT => 4,
-	CURLOPT_POSTFIELDS => http_build_query($params), //post的数据
+	CURLOPT_POSTFIELDS => $params, //post的数据
 	);
 	curl_setopt_array($curlObj, $options);
 	$response = curl_exec($curlObj);
