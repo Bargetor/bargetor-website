@@ -11,34 +11,13 @@ echo chectnut_api_proxy();
 
 
 function chectnut_api_proxy(){
-    // return $_GET['echostr'];
-//     return "<xml>
-//     <ToUserName>
-//         <![CDATA[fengjianlanqiao]]>
-//     </ToUserName>
-//     <FromUserName>
-//         <![CDATA[bargetor_public]]>
-//     </FromUserName>
-//     <CreateTime>1414131486.53</CreateTime>
-//     <MsgType>
-//         <![CDATA[text]]>
-//     </MsgType>
-//     <Content>
-//         <![CDATA[hello, this‘s great system, it‘s called chestnut!]]>
-//     </Content>
-// </xml>";
-
-	$method = $_SERVER['REQUEST_METHOD'];
-	// if($method == 'POST' && !empty($_GET["signature"])){
-	// 	$params = build_query($_GET);
- //        $url = TARGET_URL . "?" . $params;
- //        return $_GET["echostr"];
-	// 	//return http_query_post($url, '');
-	// }
-	if($method == 'POST'){
+    if (isset($_GET['echostr'])) {
+        $params = build_query($_GET);
+        return http_query_get($url, $params);
+    }else{
         $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
-		return http_query_post(TARGET_URL, $post_data);
-	}
+        return http_query_post(TARGET_URL, $post_data);
+    }
 }
 
 
