@@ -13,12 +13,10 @@ echo chectnut_api_proxy();
 function chectnut_api_proxy(){
     echo "chestnut";
     if (isset($_GET['echostr'])){
-        echo "token";
         $params = http_build_query($_GET);
-        echo "params builded";
         return http_query_get(TARGET_URL, $params);
     }else{
-        $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
+        $post_data = $GLOBALS["HTTP_RAW_POST_DATA"];
         return http_query_post(TARGET_URL, $post_data);
     }
 }
@@ -26,14 +24,12 @@ function chectnut_api_proxy(){
 
 
 function http_query_get($url, $params){
-    echo "get";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url . '?' . $params);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $output = curl_exec($ch);
     curl_close($ch);
-    echo "get done";
     return $output;
 
     //return file_get_contents($url . '?' . $params);
@@ -47,6 +43,7 @@ function http_query_post($url, $params){
     CURLOPT_RETURNTRANSFER => TRUE, //接收服务端范围的html代码而不是直接浏览器输出
     CURLOPT_TIMEOUT => 4,
     CURLOPT_POSTFIELDS => $params, //post的数据
+    CURLINFO_CONTENT_TYPE => 'text/xml'
     );
     curl_setopt_array($curlObj, $options);
     $response = curl_exec($curlObj);
