@@ -15,6 +15,7 @@ function chectnut_api_proxy(){
     if (isset($_GET['echostr'])){
         echo "token";
         $params = build_query($_GET);
+        echo "params builded";
         return http_query_get(TARGET_URL, $params);
     }else{
         $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
