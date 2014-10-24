@@ -6,10 +6,7 @@
     echo TARGET_URL . "?" . $params;
     echo $_GET["echostr"];
 
-    if($method == 'POST' && !is_null($_GET["signature"])){
-        $params = build_query($_GET);
-        $url = TARGET_URL . "?" . $params;
-        return $_GET["echostr"];
-        //return http_query_post($url, '');
+    if($method == 'POST' && !empty($_GET["signature"])){
+        echo $_GET["nonce"];
     }
 ?>
