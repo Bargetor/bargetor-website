@@ -14,7 +14,7 @@ function chectnut_api_proxy(){
     echo "chestnut";
     if (isset($_GET['echostr'])){
         echo "token";
-        $params = build_query($_GET);
+        $params = http_build_query($_GET);
         echo "params builded";
         return http_query_get(TARGET_URL, $params);
     }else{
