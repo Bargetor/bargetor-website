@@ -16,7 +16,6 @@ function chectnut_api_proxy(){
 		$params = build_query($_GET);
 		return http_query_get(TARGET_URL, $params);
 	}
-    echo $method;
 	if($method == 'POST'){
         return build_query($_POST);
 		//return http_query_post(TARGET_URL, $_POST);
