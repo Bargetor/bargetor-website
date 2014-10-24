@@ -17,6 +17,7 @@ function chectnut_api_proxy(){
 		return http_query_get(TARGET_URL, $params);
 	}
 	if($method == 'POST'){
+        return $_POST
 		return http_query_post(TARGET_URL, $_POST);
 	}
 }
@@ -30,7 +31,7 @@ function http_query_get($url, $params){
 	$output = curl_exec($ch);
 	curl_close($ch);
 	return $output;
-	
+
 	//return file_get_contents($url . '?' . $params);
 }
 
