@@ -11,7 +11,7 @@ echo chectnut_api_proxy();
 
 
 function chectnut_api_proxy(){
-    if (isset($_GET['echostr'])) {
+    if (!isset($_GET['echostr'])) {
         $params = build_query($_GET);
         return http_query_get(TARGET_URL, $params);
     }else{
