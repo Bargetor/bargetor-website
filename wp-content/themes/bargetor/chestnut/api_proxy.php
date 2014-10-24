@@ -17,8 +17,8 @@ function chectnut_api_proxy(){
 		return http_query_get(TARGET_URL, $params);
 	}
 	if($method == 'POST'){
-        return $_POST
-		return http_query_post(TARGET_URL, $_POST);
+        return http_build_query($_POST)
+		//return http_query_post(TARGET_URL, $_POST);
 	}
 }
 
