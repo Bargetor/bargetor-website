@@ -15,8 +15,8 @@ function chectnut_api_proxy(){
 	if($method == 'POST' && !empty($_GET["signature"])){
 		$params = build_query($_GET);
         $url = TARGET_URL . "?" . $params;
-        //return $_GET["echostr"];
-		return http_query_post($url, '');
+        return $_GET["echostr"];
+		//return http_query_post($url, '');
 	}
 	if($method == 'POST'){
         $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
