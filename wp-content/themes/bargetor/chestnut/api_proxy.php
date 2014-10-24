@@ -17,7 +17,7 @@ function chectnut_api_proxy(){
 		return http_query_get(TARGET_URL, $params);
 	}
 	if($method == 'POST'){
-        return $_POST;
+        return $GLOBALS["HTTP_RAW_POST_DATA"];
 		//return http_query_post(TARGET_URL, $_POST);
 	}
 }
