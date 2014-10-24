@@ -7,33 +7,50 @@
 define("TOKEN", "bargetor_chestnut");
 define("TARGET_URL", "http://127.0.0.1:8000/api/");
 
-echo chectnut_api_proxy();
+chectnut_api_proxy();
 
 
 function chectnut_api_proxy(){
     if (isset($_GET['echostr'])) {
         $params = build_query($_GET);
-        return http_query_get(TARGET_URL, $params);
+        echo http_query_get(TARGET_URL, $params);
     }else{
-        return "<xml>
-    <ToUserName>
-        <![CDATA[fengjianlanqiao]]>
-    </ToUserName>
-    <FromUserName>
-        <![CDATA[bargetor_public]]>
-    </FromUserName>
-    <CreateTime>1414134360.37</CreateTime>
-    <MsgType>
-        <![CDATA[text]]>
-    </MsgType>
-    <Content>
-        <![CDATA[hello, this‘s great system, it‘s called chestnut!]]>
-    </Content>
-</xml>";
+        responseMsg();
         // $post_data = "HTTP_RAW_POST_DATA=" . $GLOBALS["HTTP_RAW_POST_DATA"];
         // return http_query_post(TARGET_URL, $post_data);
     }
 }
+
+ public function responseMsg()
+    {
+        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+
+        if (!empty($postStr)){
+            $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+            $fromUsername = $postObj->FromUserName;
+            $toUsername = $postObj->ToUserName;
+            $keyword = trim($postObj->Content);
+            $time = time();
+            $textTpl = "<xml>
+                        <ToUserName><![CDATA[%s]]></ToUserName>
+                        <FromUserName><![CDATA[%s]]></FromUserName>
+                        <CreateTime>%s</CreateTime>
+                        <MsgType><![CDATA[%s]]></MsgType>
+                        <Content><![CDATA[%s]]></Content>
+                        <FuncFlag>0</FuncFlag>
+                        </xml>";
+            if($keyword == "?" || $keyword == "？")
+            {
+                $msgType = "text";
+                $contentStr = date("Y-m-d H:i:s",time());
+                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                echo $resultStr;
+            }
+        }else{
+            echo "";
+            exit;
+        }
+    }
 
 
 function http_query_get($url, $params){
