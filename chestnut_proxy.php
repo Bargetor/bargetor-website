@@ -13,6 +13,7 @@ echo chectnut_api_proxy();
 function chectnut_api_proxy(){
     echo "chestnut";
     if (isset($_GET['echostr'])){
+        echo "token";
         $params = build_query($_GET);
         return http_query_get(TARGET_URL, $params);
     }else{
@@ -24,12 +25,14 @@ function chectnut_api_proxy(){
 
 
 function http_query_get($url, $params){
+    echo "get";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url . '?' . $params);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $output = curl_exec($ch);
     curl_close($ch);
+    echo "get done";
     return $output;
 
     //return file_get_contents($url . '?' . $params);
