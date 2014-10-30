@@ -15,16 +15,16 @@
 
 // ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
 /** WordPress数据库的名称 */
-define('DB_NAME', 'bargetor_website');
+define('DB_NAME', 'bargetor');
 
 /** MySQL数据库用户名 */
 define('DB_USER', 'bargetor_admin');
 
 /** MySQL数据库密码 */
-define('DB_PASSWORD', 'majinluyi');
+define('DB_PASSWORD', 'bargetor');
 
 /** MySQL主机 */
-define('DB_HOST', 'localhost'); 
+define('DB_HOST', '127.0.0.1');
 /** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8');
 
@@ -90,7 +90,7 @@ define('WP_ZH_CN_ICP_NUM', true);
 
 /** WordPress目录的绝对路径。 */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');

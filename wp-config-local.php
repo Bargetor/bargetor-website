@@ -24,7 +24,7 @@ define('DB_USER', 'bargetor_admin');
 define('DB_PASSWORD', 'bargetor');
 
 /** MySQL主机 */
-define('DB_HOST', 'localhost'); 
+define('DB_HOST', '127.0.0.1');
 /** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8');
 
