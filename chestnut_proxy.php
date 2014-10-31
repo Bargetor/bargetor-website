@@ -16,7 +16,8 @@ function chectnut_api_proxy(){
         return http_query_get(TARGET_URL, $params);
     }else{
         $post_data = $GLOBALS["HTTP_RAW_POST_DATA"];
-        return http_query_post(TARGET_URL, $post_data);
+        $url = TARGET_URL . '?' . http_build_query($_GET);
+        return http_query_post($url, $post_data);
     }
 }
 
