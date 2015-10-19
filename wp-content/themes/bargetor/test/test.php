@@ -4,7 +4,7 @@
     echo '</br>'
     $params = build_query($_GET);
     echo $params;
-    echo '</br>'
+    echo '</br>';
 
-    echo $_POST
+    echo $_POST;
 ?>
