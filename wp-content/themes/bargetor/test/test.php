@@ -1,5 +1,5 @@
 <?php
-    define('LOG_FILE', '/var/log/web/bargetor-website.log')
+    define('LOG_FILE', '/var/log/web/bargetor-website.log');
 
 	$method = $_SERVER['REQUEST_METHOD'];
     echo $method;
