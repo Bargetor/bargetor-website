@@ -1,6 +1,4 @@
 <?php
-    define('LOG_FILE', '/var/log/web/bargetor-website.log');
-
 	$method = $_SERVER['REQUEST_METHOD'];
     echo $method;
     echo '</br>';
@@ -9,7 +7,8 @@
     echo '</br>';
 
     echo $_POST;
-    error_log('the request is ', 3, LOG_FILE);
-    //echo 'the request is ' . $method . 'the params is ||'. $params . 'and request body is || ' . $_POST, 3
+
+    $log_str = 'the request is ' . $method . 'the params is ||'. $params . 'and request body is || ' . $_POST;
+    error_log($log_str, 3, '/var/log/web/bargetor-website.log');
 
 ?>
