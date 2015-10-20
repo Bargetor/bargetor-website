@@ -7,7 +7,7 @@
 
     $log_str = "the request is " . $method . " and params is ||". $params . " and request body is || " . $postStr;
 
-    error_log('something', 3, '/var/log/web/bargetor-website.log');
+    error_log($log_str, 3, '/var/log/web/bargetor-website.log');
 
 
 function concat_params($params) {
