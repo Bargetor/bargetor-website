@@ -5,7 +5,7 @@
 
     $post_str = concat_params($_POST);
 
-    $log_str = "the request is " . $method . " and params is ||". $params . " and request body is || " . $post_str . '\n';
+    $log_str = "the request is " . $method . " and params is ||". $params . " and request body is || " . $post_str . '\r\n';
 
     error_log($log_str, 3, '/var/log/web/bargetor-website.log');
 
