@@ -9,7 +9,7 @@
 
     error_log($log_str, 3, '/var/log/web/bargetor-website.log');
 
-    echo "{'message': 'ok'}"
+    echo "{'message': 'ok'}";
 
 
     function concat_params($params) {
