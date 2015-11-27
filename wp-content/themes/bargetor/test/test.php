@@ -9,14 +9,16 @@
 
     error_log($log_str, 3, '/var/log/web/bargetor-website.log');
 
+    echo "{'message': 'ok'}"
 
-function concat_params($params) {
-    ksort($params);
-    $pairs = array();
-    foreach($params as $key=>$val) {
-        array_push($pairs, $key . '=' . urlencode($val));
+
+    function concat_params($params) {
+        ksort($params);
+        $pairs = array();
+        foreach($params as $key=>$val) {
+            array_push($pairs, $key . '=' . urlencode($val));
+        }
+        return join('&', $pairs);
     }
-    return join('&', $pairs);
-}
 
 ?>
