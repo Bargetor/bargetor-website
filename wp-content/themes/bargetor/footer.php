@@ -34,7 +34,7 @@
 					</div>
 				</div>
 			</div>
-			<p>Copyright 2014 by Bargetor, all rights reserved.</p>
+			<p>Copyright 2014 - 2016 by Bargetor, all rights reserved.</p>
 		</div>
 		<!-- bootstrap javascript -->
 		<script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
