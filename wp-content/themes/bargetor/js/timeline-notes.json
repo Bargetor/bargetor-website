@@ -42,6 +42,10 @@
 		{'title' : '第四款产品', 
 		'date' : '2013/11/31 00:00:00', 
 		'description' : '同样以女生署名的系列产品《缄·娇》，我的第四款，也是第一款移动端产品。',
-		'image' : 'red-star'}
+		'image' : 'red-star'},
+		{'title' : '加入饿了么', 
+		'date' : '2014/07/15 00:00:00', 
+		'description' : '任产品经理',
+		'image' : 'person'}
 	]
 }
