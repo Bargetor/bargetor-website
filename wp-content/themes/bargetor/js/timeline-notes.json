@@ -46,6 +46,10 @@
 		{'title' : '加入饿了么', 
 		'date' : '2014/07/15 00:00:00', 
 		'description' : '任产品经理',
-		'image' : 'person'}
+		'image' : 'person'},
+		{'title' : 'Migrant', 
+		'date' : '2015/02/08 13:35:00', 
+		'description' : '一款旅游类个人产品',
+		'image' : 'red-star'}
 	]
 }
